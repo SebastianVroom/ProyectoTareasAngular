@@ -1,0 +1,28 @@
+
+<div>
+<input placeholder="Introduzca su tarea" [(ngModel)]='nuevaTarea.desc'>
+            <select [(ngModel)]='nuevaTarea.prio'>
+                <option value='Baja'>Baja</option>
+                <option value='Media'>Media</option>
+                <option value='Alta'>Alta</option>
+            </select>
+            <button (click)='addTarea()'>Guardar Tarea</button>
+            <hr>
+            <input [(ngModel)]='busqueda' placeholder="Buscar tarea">
+            <ul>
+                <li [class]='item.prio' *ngFor='let item of listaDisp();index as i'>
+                    <input type="checkbox" (click)='checkToggle(i)' [checked]="item.checked"><span>{{ item.desc }}, Hace {{ item.minCread }}  minutos, Prioridad: </span>
+                    <button (click)='ajustPrio("Alta",i)'>Alta</button>
+                    <button (click)='ajustPrio("Media",i)'>Media</button>
+                    <button (click)='ajustPrio("Baja",i)'>Baja</button>
+                    <button (click)='borrarTarea(i)'>Borrar</button>
+                </li>
+            </ul>
+            <p>
+                {{tareasCompletadas()}}/{{lista.length}} Tareas hechas || Mostrar:
+                <span (click)='ajustDisp(0)'>Todas</span>|
+                <span (click)='ajustDisp(1)'>Completadas</span>|
+                <span (click)='ajustDisp(2)'>Pendientes</span> || 
+                <button (click)="borrarCompletadas()">Borrar completadas</button>
+            </p>
+        </div>

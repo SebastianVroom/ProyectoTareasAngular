@@ -1,0 +1,43 @@
+*{/*Estilo del componente \/ */
+    font-family: Rockwell;
+}
+.check{
+    text-decoration: line-through;
+}
+div{
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 30px 20px 10px 20px;
+    border-radius: 30px;
+    background-color: #ff9f8b;
+}
+div ul{
+    border: 1px solid black;
+    border-radius: 30px 30px 0 0;
+    padding: 0 20px 0 20px;
+    background-color: whitesmoke;
+    margin-bottom: 0;
+}
+li{
+    list-style-type: none;
+}
+div p{
+    margin-top: 0;
+    border-radius: 0 0 30px 30px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    padding: 0 20px 0 20px;
+}
+p span{
+    color: blue;
+}
+button{
+    border-radius: 8px;
+}/* /\ */
+.Alta button:nth-child(3), .Media button:nth-child(4), .Baja button:nth-child(5){/*Indica la prioridad de cada tarea*/
+    background-color: black;
+    color: whitesmoke;
+}
+input:checked + span{/*Tacha el texto de tareas completadas*/
+    text-decoration: line-through;
+}
